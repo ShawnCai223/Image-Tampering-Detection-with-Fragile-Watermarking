@@ -1,0 +1,28 @@
+# Fdb version 4
+["xdvipdfmx"] 1731264442.53551 "embedding.xdv" "embedding.pdf" "embedding" 1731264442.99702 0
+  "embedding.xdv" 1731264442.49112 13756 cdecd581e897fb0fce82a17a8385b9a6 "xelatex"
+  (generated)
+  "embedding.pdf"
+  (rewritten before read)
+["xelatex"] 1731264440.84161 "/Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/src/embedding/latex/embedding.tex" "embedding.xdv" "embedding" 1731264442.99681 0
+  "/Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/src/embedding/latex/embedding.tex" 1731264430.29127 2178 b4fe1ffbb1be01a1586649600b637538 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/map/fontname/texfonts.map" 1710106625 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1710106625 1004 54797486969f23fa377b128694d548df ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1710106625 2222 499d61426192c39efd8f410ee1a52b9c ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsgen.sty" 1710106625 4173 82ac04dfb1256038fad068287fbb4fe6 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsmath.sty" 1710106625 88371 d84032c0f422c3d1e282266c01bef237 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsopn.sty" 1710106625 4474 b811654f4bf125f11506d13d13647efb ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amstext.sty" 1710106625 2444 0d0c1ee65478277e8015d65b86983da2 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/article.cls" 1710106625 20144 147463a6a579f4597269ef9565205cfe ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/size10.clo" 1710106625 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/ts1cmr.fd" 1710106625 2430 fce77d7e103eb98b6c4d486ae1d466c0 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1710106625 31815 59e639f95c4a3bc971cad46c02998fac ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/web2c/texmf.cnf" 1710106625 41652 e14926ab86fde7902cad99d9eeaa5ca5 ""
+  "/opt/homebrew/Cellar/texlive/20240312/share/texmf-var/web2c/xetex/xelatex.fmt" 1710106625 10850407 4d3c8801bf8f052becc18497e8e26479 ""
+  "embedding.aux" 1731264442.49024 32 3985256e7290058c681f74d7a3565a19 "xelatex"
+  "embedding.tex" 1731264430.29127 2178 b4fe1ffbb1be01a1586649600b637538 ""
+  (generated)
+  "embedding.aux"
+  "embedding.log"
+  "embedding.xdv"
+  (rewritten before read)

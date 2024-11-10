@@ -1,0 +1,34 @@
+PWD /Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/src/embedding/latex
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/web2c/texmf.cnf
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-var/web2c/xetex/xelatex.fmt
+INPUT /Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/src/embedding/latex/embedding.tex
+OUTPUT embedding.log
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/article.cls
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/article.cls
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/size10.clo
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/size10.clo
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/size10.clo
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+INPUT ./embedding.aux
+INPUT ./embedding.aux
+INPUT embedding.aux
+OUTPUT embedding.aux
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/ts1cmr.fd
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/ts1cmr.fd
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/ts1cmr.fd
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+OUTPUT embedding.xdv
+INPUT embedding.aux
