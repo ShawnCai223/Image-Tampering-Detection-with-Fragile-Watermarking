@@ -7,10 +7,10 @@ Image Tampering Detection with Fragile Watermarking
 3. [Paper](ref/multipurpose.pdf)
 
 ## Division
-Presentation: @ShawnCai223
+Presentation: @ShawnCai223     
 Coding: @pec020, @akane0721
 
 ## Timeline
-11.17 Finish coding basic
-11.21/26 Update presentation
-12.13 Final presentation
+11.17 Finish coding basic    
+11.21/26 Update presentation    
+12.13 Final presentation    
