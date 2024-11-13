@@ -1,5 +1,8 @@
 import numpy as np
 
+def get_F_embed(unit):
+    return (3**0 * unit[0] + 3**1 * unit[1]) % 3**2
+
 def embed_watermark(image, watermark_bits):
     """
     Embed fragile watermark data into the given image.
@@ -16,29 +19,29 @@ def embed_watermark(image, watermark_bits):
     
     # Block size (2x4)
     block_height, block_width = 2, 4
+
+    blocks = [watermarked_image[i:i+2, j:j+4] for i in range(0, watermarked_image.shape[0], 2)
+              for j in range(0, watermarked_image.shape[1], 4)]
     
     # Iterate over each block in the image
-    for i in range(0, image.shape[0], block_height):
-        for j in range(0, image.shape[1], block_width):
-            # Extract a block (2x4)
-            block = watermarked_image[i:i+block_height, j:j+block_width]
-            
-            # [TODO: padding or ignore?] Ensure the block is complete (for edge cases)
-            if block.shape[0] < block_height or block.shape[1] < block_width:
-                continue
-            
-            # [TODO: maintain unchanged or warning?] Get the next 12-bit watermark data and convert to base-9 digits
-            if watermark_bits == []:
-                print("No enough watermark bits!")
-                break
-            watermark_12bit = watermark_bits.pop(0)
-            watermark_4_base9 = convert_to_base_digits(watermark_12bit, 9, 4)
+    for i, block in enumerate(blocks):
+        
+        # [TODO: padding or ignore?] Ensure the block is complete (for edge cases)
+        if block.shape[0] < block_height or block.shape[1] < block_width:
+            continue
+        
+        # [TODO: maintain unchanged or warning?] Get the next 12-bit watermark data and convert to base-9 digits
+        watermark_12bit = int(watermark_bits[i * 12 : (i + 1) * 12], 2)
 
-            # Embed watermark in each unit (2 pixels) of the block
-            units = [block[:, col] for col in range(block_width)]  # U1, U2, U3, U4
-            for unit, digit in zip(units, watermark_4_base9):
-                embed_digit_in_unit(unit, digit)
-                
+        watermark_4_base9 = convert_to_base_digits(watermark_12bit, 9, 4)
+
+        # Embed watermark in each unit (2 pixels) of the block
+        units = [block[:, col] for col in range(block_width)]  # U1, U2, U3, U4
+        for unit, digit in zip(units, watermark_4_base9):
+            embed_digit_in_unit(unit, digit)
+    
+
+    # bit maybe < 0?
     return watermarked_image
 
 def convert_to_base_digits(value, base, nfill):
@@ -56,7 +59,7 @@ def embed_digit_in_unit(unit, d):
         d (int): Base-9 digit to embed.
     """
     # Compute F_embed [TODO: check what the {} stands for?]
-    F_embed = (3**0 * unit[0] + 3**1 * unit[1]) % 3**2
+    F_embed = get_F_embed(unit)
     
     # Calculate x
     n = 2

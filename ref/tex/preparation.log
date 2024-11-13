@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Homebrew) (preloaded format=xelatex 2024.3.20)  10 NOV 2024 10:47
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Homebrew) (preloaded format=xelatex 2024.3.20)  10 NOV 2024 15:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/src/embedding/latex/embedding.tex"
-(/Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/src/embedding/latex/embedding.tex
+**"/Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/tex/preparation.tex"
+(/Users/champion/OneDrive - UC San Diego/UCSD/Course/fa24/ece253/project/repo/ucsd-ece253-project/tex/preparation.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/article.cls
@@ -87,6 +87,24 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
+) (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+) (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+ (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
 ) (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
 \g__graphics_track_int=\count270
@@ -94,49 +112,56 @@ File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count271
 \g__pdf_backend_annotation_int=\count272
 \g__pdf_backend_link_int=\count273
-) (./embedding.aux)
-\openout1 = `embedding.aux'.
+) (./preparation.aux)
+\openout1 = `preparation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5.
  (/opt/homebrew/Cellar/texlive/20240312/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+File: watermark_preparation_process.png Graphic file (type bmp)
+<watermark_preparation_process.png>
 
-Overfull \hbox (11.62946pt too wide) in paragraph at lines 11--12
+Overfull \hbox (11.62946pt too wide) in paragraph at lines 23--24
 \TU/lmr/m/n/10 blocks. Then, sequentially select 12 bits of watermark data from $\OML/cmm/m/it/10 W[]$
  []
 
 [1
 
-] (./embedding.aux)
+]
+Overfull \hbox (5.75508pt too wide) in paragraph at lines 58--58
+[]\TU/lmr/bx/n/14.4 Fragile Watermark Extraction (Tamper Check) 
+ []
+
+[2] (./preparation.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1196 strings out of 474773
- 20026 string characters out of 5748823
- 1927839 words of memory out of 5000000
- 23399 multiletter control sequences out of 15000+600000
+ 1648 strings out of 474773
+ 27345 string characters out of 5748823
+ 1930839 words of memory out of 5000000
+ 23829 multiletter control sequences out of 15000+600000
  558571 words of font info for 44 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,7n,65p,398b,257s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,7n,65p,934b,257s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on embedding.xdv (1 page, 13756 bytes).
+Output written on preparation.xdv (2 pages, 32704 bytes).
