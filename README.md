@@ -14,3 +14,10 @@ Coding: @pec020, @akane0721
 11.17 Finish coding basic    
 11.21/26 Update presentation    
 12.13 Final presentation    
+
+## Tasks
+1. neighbor
+2. padding
+3. visualize tampered block
+4. test & metrics
+5. optionals
