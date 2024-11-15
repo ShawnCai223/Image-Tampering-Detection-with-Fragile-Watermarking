@@ -31,9 +31,9 @@ def embed_watermark(image, watermark_bits):
             continue
         
         # [TODO: maintain unchanged or warning?] Get the next 12-bit watermark data and convert to base-9 digits
-        watermark_12bit = int(watermark_bits[i * 12 : (i + 1) * 12], 2)
+        watermark_12bit = watermark_bits[i * 12 : (i + 1) * 12]
 
-        watermark_4_base9 = convert_to_base_digits(watermark_12bit, 9, 4)
+        watermark_4_base9 = [int(watermark_12bit[i: i + 3], 2) for i in range(0, 12, 3)]
 
         # Embed watermark in each unit (2 pixels) of the block
         units = [block[:, col] for col in range(block_width)]  # U1, U2, U3, U4
@@ -63,11 +63,10 @@ def embed_digit_in_unit(unit, d):
     
     # Calculate x
     n = 2
-    x = (d - F_embed + ((3**n - 1) // 2)) % 3**n
+    x = (d - F_embed) % 3**n # simplified by 4 == (11)_3
     
     # Convert x to base-3
     x_base3 = convert_to_base_digits(x, 3, n)
-    x_base3 = [xi - 1 for xi in x_base3]  # Get x'' by subtracting 1 from each digit
     
     # Update unit pixels with x'' digits
     unit[0] += x_base3[1]

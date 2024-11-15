@@ -17,6 +17,8 @@ def prep(host_image, k3, k4):
     
     # [TODO]Generate a random binary sequence W_ran_2_block
     W_ran_2_block = generate_random_sequence(TB, k3)
+
+    print("prep ran: ", W_ran_2_block)
     
     # Calculate block intensities and convert to binary
     block_intensities = [avg_block_intensity(block) for block in blocks]
