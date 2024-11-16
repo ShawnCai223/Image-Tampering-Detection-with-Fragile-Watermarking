@@ -20,6 +20,7 @@ def embed_watermark(image, watermark_bits):
     # Block size (2x4)
     block_height, block_width = 2, 4
 
+    # [TODO: padding]
     blocks = [watermarked_image[i:i+2, j:j+4] for i in range(0, watermarked_image.shape[0], 2)
               for j in range(0, watermarked_image.shape[1], 4)]
     
@@ -58,7 +59,6 @@ def embed_digit_in_unit(unit, d):
         unit (np.ndarray): Array containing 2 pixels of the unit.
         d (int): Base-9 digit to embed.
     """
-    # Compute F_embed [TODO: check what the {} stands for?]
     F_embed = get_F_embed(unit)
     
     # Calculate x

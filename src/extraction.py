@@ -5,6 +5,7 @@ from embedding import get_F_embed
 block_height, block_width = 2, 4
 
 def extr(watermarked_image, k3, k4):
+    # [TODO: padding]
     blocks = [watermarked_image[i:i+2, j:j+4] for i in range(0, watermarked_image.shape[0], 2)
               for j in range(0, watermarked_image.shape[1], 4)]
     TB = len(blocks)
@@ -16,7 +17,6 @@ def extr(watermarked_image, k3, k4):
     tampered_blocks = []
     for i, block in enumerate(blocks):
         F_ext = [get_F_embed(block[:, col]) for col in range(block_width)]
-        # [TODO: 9-base to 3bits(<= 8) ?]
         extracted_digits = "".join([f"{f:03b}" for f in F_ext])
 
         EW_ran_2 = extracted_digits[:6]

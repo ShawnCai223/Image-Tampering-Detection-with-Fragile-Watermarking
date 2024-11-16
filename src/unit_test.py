@@ -1,5 +1,5 @@
 import numpy as np
-from prep import prep
+from preparation import prep
 from embedding import embed_watermark
 from extraction import extr
 
@@ -40,10 +40,16 @@ def test_embd():
 
 def test_extr():
     # Test parameters
-    host_image = np.ones((8, 8), dtype=int)  # 8x8 test image
+    # host_image = np.ones((8, 8), dtype=int)  # 8x8 test image
+    host_im = Image.open('253.tif')
+    host_image = np.array(host_im)
+
     k3, k4 = 12345, 54321
     watermark = prep(host_image, k3, k4)
     watermarked_image = embed_watermark(host_image, watermark)
+
+    host_im.show()
+    Image.fromarray(watermarked_image).show()
     
     # Simulate tampering by modifying one block
     watermarked_image[0:2, 0:4] += 10
