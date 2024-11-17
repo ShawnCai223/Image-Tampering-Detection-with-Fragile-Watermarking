@@ -21,6 +21,18 @@ def embed_watermark(image, watermark_bits):
     block_height, block_width = 2, 4
 
     # [TODO: padding]
+    # Calculate padding sizes
+    pad_height = (block_height - (image.shape[0] % block_height)) % block_height
+    pad_width = (block_width - (image.shape[1] % block_width)) % block_width
+
+    # Apply padding
+    watermarked_image = np.pad(
+        watermarked_image,
+        ((0, pad_height), (0, pad_width)),
+        mode="constant",
+        constant_values=0,
+    )
+
     blocks = [watermarked_image[i:i+2, j:j+4] for i in range(0, watermarked_image.shape[0], 2)
               for j in range(0, watermarked_image.shape[1], 4)]
     
@@ -28,8 +40,8 @@ def embed_watermark(image, watermark_bits):
     for i, block in enumerate(blocks):
         
         # [TODO: padding or ignore?] Ensure the block is complete (for edge cases)
-        if block.shape[0] < block_height or block.shape[1] < block_width:
-            continue
+        #if block.shape[0] < block_height or block.shape[1] < block_width:
+            #continue
         
         # [TODO: maintain unchanged or warning?] Get the next 12-bit watermark data and convert to base-9 digits
         watermark_12bit = watermark_bits[i * 12 : (i + 1) * 12]
@@ -71,6 +83,11 @@ def embed_digit_in_unit(unit, d):
     # Update unit pixels with x'' digits
     unit[0] += x_base3[1]
     unit[1] += x_base3[0]
+    
+    #[TODO: Not sure whether clipping will have bad effects on final result]
+    unit[0] = np.clip(unit[0], 0, 255)
+    unit[1] = np.clip(unit[1], 0, 255)
+
 
 # Example usage
 # Load a grayscale image as a 2D numpy array (e.g., with OpenCV or PIL)

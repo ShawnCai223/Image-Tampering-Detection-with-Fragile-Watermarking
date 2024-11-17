@@ -48,7 +48,7 @@ def test_extr():
     watermark = prep(host_image, k3, k4)
     watermarked_image = embed_watermark(host_image, watermark)
 
-    host_im.show()
+    #host_im.show()
     Image.fromarray(watermarked_image).show()
     
     # Simulate tampering by modifying one block
