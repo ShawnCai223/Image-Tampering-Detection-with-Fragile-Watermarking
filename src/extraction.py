@@ -1,24 +1,14 @@
 import numpy as np
 from preparation import generate_random_sequence
 from embedding import get_F_embed
+from utils import padding
 
 block_height, block_width = 2, 4
 
 def extr(watermarked_image, k3, k4):
     # [TODO: padding]
     block_height, block_width = 2, 4
-    pad_height = (
-        block_height - (watermarked_image.shape[0] % block_height)
-    ) % block_height
-    pad_width = (block_width - (watermarked_image.shape[1] % block_width)) % block_width
-
-    # Apply padding
-    watermarked_image = np.pad(
-        watermarked_image,
-        ((0, pad_height), (0, pad_width)),
-        mode="constant",
-        constant_values=0,
-    )
+    watermarked_image = padding(watermarked_image, block_height, block_width)
     blocks = [watermarked_image[i:i+2, j:j+4] for i in range(0, watermarked_image.shape[0], 2)
               for j in range(0, watermarked_image.shape[1], 4)]
     TB = len(blocks)

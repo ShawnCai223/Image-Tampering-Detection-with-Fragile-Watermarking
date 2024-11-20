@@ -1,5 +1,6 @@
 import numpy as np
 from random import Random
+from utils import padding
 
 def generate_random_sequence(TB, seed):
     rng = Random(seed)
@@ -12,16 +13,7 @@ def avg_block_intensity(block):
 def prep(host_image, k3, k4):
     # Divide the image into non-overlapping 2x4 blocks
     block_height, block_width = 2, 4
-    pad_height = (block_height - (host_image.shape[0] % block_height)) % block_height
-    pad_width = (block_width - (host_image.shape[1] % block_width)) % block_width
-    # Apply padding
-    host_image = np.pad(
-        host_image,
-        ((0, pad_height), (0, pad_width)),
-        mode="constant",
-        constant_values=0,
-    )
-
+    host_image = padding(host_image, block_height, block_width)
     blocks = [host_image[i:i+2, j:j+4] for i in range(0, host_image.shape[0], 2)
               for j in range(0, host_image.shape[1], 4)]
     TB = len(blocks)

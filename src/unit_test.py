@@ -41,7 +41,7 @@ def test_embd():
 def test_extr():
     # Test parameters
     # host_image = np.ones((8, 8), dtype=int)  # 8x8 test image
-    host_im = Image.open('253.tif')
+    host_im = Image.open('253.tif')   
     host_image = np.array(host_im)
 
     k3, k4 = 12345, 54321
