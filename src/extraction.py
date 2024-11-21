@@ -32,7 +32,7 @@ def extr(watermarked_image, k3, k4):
         (idx // num_blocks_col, idx % num_blocks_col) for idx in tampered_blocks
     ]
 
-    smoothed_tampered = set(tampered_blocks)
+    smoothed_tampered = set()
 
     # Add surrounding blocks
     for row, col in tampered_coords:
@@ -40,7 +40,7 @@ def extr(watermarked_image, k3, k4):
             for dc in [-1, 0, 1]:  # column offset
                 r, c = row + dr, col + dc
                 if 0 <= r < num_blocks_row and 0 <= c < num_blocks_col:
-                    smoothed_tampered.add(r * num_blocks_col + c)  # Convert back to 1D index
+                    smoothed_tampered.add((r, c))  # Convert back to 1D index
 
     smoothed_tampered = list(smoothed_tampered)
     
