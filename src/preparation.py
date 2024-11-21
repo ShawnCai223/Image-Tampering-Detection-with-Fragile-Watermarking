@@ -1,5 +1,6 @@
 import numpy as np
 from random import Random
+from utils import padding, partition
 
 def generate_random_sequence(TB, seed):
     rng = Random(seed)
@@ -10,15 +11,14 @@ def avg_block_intensity(block):
     return int(np.mean(block))
 
 def prep(host_image, k3, k4):
-    # Divide the image into non-overlapping 2x4 blocks
-    blocks = [host_image[i:i+2, j:j+4] for i in range(0, host_image.shape[0], 2)
-              for j in range(0, host_image.shape[1], 4)]
+    blocks = partition(padding(host_image))
+    
     TB = len(blocks)
     
     # [TODO]Generate a random binary sequence W_ran_2_block
     W_ran_2_block = generate_random_sequence(TB, k3)
 
-    print("prep ran: ", W_ran_2_block)
+    #print("prep ran: ", W_ran_2_block)
     
     # Calculate block intensities and convert to binary
     block_intensities = [avg_block_intensity(block) for block in blocks]
