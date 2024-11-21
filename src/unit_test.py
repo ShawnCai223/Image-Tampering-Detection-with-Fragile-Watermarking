@@ -76,8 +76,12 @@ def test_visualization():
     watermark = prep(host_image, k3, k4)
     watermarked_image = embed_watermark(host_image, watermark)
 
-    tampered_image = randomly_tamper_image(watermarked_image)
+    tampered_image = watermarked_image
+    for _ in range(3):
+        tampered_image = randomly_tamper_image(tampered_image)
+        
     tampered_blocks = extr(tampered_image, k3, k4)
+
     print(tampered_blocks)
 
     colored_image = color_tampered_blocks(tampered_image, tampered_blocks)
