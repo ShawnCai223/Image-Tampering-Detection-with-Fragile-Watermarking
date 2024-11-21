@@ -2,6 +2,7 @@ import numpy as np
 from preparation import prep
 from embedding import embed_watermark
 from extraction import extr
+from utils import block_height, block_width
 
 from PIL import Image
 
@@ -14,7 +15,7 @@ def test_prep():
     watermark = prep(host_image, k3, k4)
     assert isinstance(watermark, str), "Watermark should be a binary string."
 
-    assert len(watermark) == 12 * (host_image.size // (2 * 4)), "Incorrect watermark length."
+    assert len(watermark) == 12 * (host_image.size // (block_height * block_width)), "Incorrect watermark length."
     print("prep module passed.")
 
 def test_embd():
@@ -52,14 +53,15 @@ def test_extr():
     Image.fromarray(watermarked_image).show()
     
     # Simulate tampering by modifying one block
-    watermarked_image[0:2, 0:4] += 10
+    watermarked_image[0:block_height, 0:block_width] += 10
     
     # Test watermark extraction and tamper detection
     tampered_blocks = extr(watermarked_image, k3, k4)
     assert len(tampered_blocks) > 0, "There should be at least one tampered block."
-    print(tampered_blocks)
+
+    n = watermarked_image.shape[1] // block_width
+    print("Tampered blocks: ", tampered_blocks, "in 2d: ", [(idx // n, idx % n) for idx in tampered_blocks])
     assert 0 in tampered_blocks, "block 0 should be detected as tampered!"
-    # [TODO smooth] assert 4 not in tampered_blocks, "block 4 should not be detected as tampered!"
 
     print("extr module passed.")
 

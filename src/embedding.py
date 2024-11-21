@@ -1,5 +1,5 @@
 import numpy as np
-from utils import padding
+from utils import padding, partition, block_width
 
 def get_F_embed(unit):
     return (3**0 * unit[0] + 3**1 * unit[1]) % 3**2
@@ -19,10 +19,8 @@ def embed_watermark(image, watermark_bits):
     watermarked_image = image.copy()
     
     # Block size (2x4)
-    block_height, block_width = 2, 4
-    watermarked_image = padding(watermarked_image, block_height, block_width)
-    blocks = [watermarked_image[i:i+2, j:j+4] for i in range(0, watermarked_image.shape[0], 2)
-              for j in range(0, watermarked_image.shape[1], 4)]
+    watermarked_image = padding(watermarked_image)
+    blocks = partition(watermarked_image)
     
     # Iterate over each block in the image
     for i, block in enumerate(blocks):
