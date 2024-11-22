@@ -64,7 +64,7 @@ def color_tampered_blocks(image, tampered_blocks):
     
     return output_image
 
-def plot_detection_result(tampered_image, result_image):
+def plot_detection_result(tampered_image, result_image, recovery = False):
     # Plot the original and result side by side
     fig, axs = plt.subplots(1, 2, figsize=(12, 6))
 
@@ -75,7 +75,7 @@ def plot_detection_result(tampered_image, result_image):
 
     # Result image
     axs[1].imshow(result_image, cmap='gray', vmin=0, vmax=255)
-    axs[1].set_title('Detected Tampered Blocks(Blacked Out)')
+    axs[1].set_title('Detected Tampered Blocks(Blacked Out)' if not recovery else "Recoverd Image")
     axs[1].axis('off')
 
     plt.savefig('result.png')
