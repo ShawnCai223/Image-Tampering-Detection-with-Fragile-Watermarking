@@ -71,4 +71,20 @@ The following steps show the authentication process to check the tampering:
     \item Apply the block-neighborhood approach to smoothen the result of Step 4. For smoothing, eight neighborhood blocks (except corner positions) of each block are considered. If the majority of the blocks (out of these nine blocks) are tampered/non-tampered, the block is also marked as tampered/non-tampered.
 \end{enumerate}
 
+\section{Image Self-recovery}
+
+The authenticated image (after tamper localization) can be divided into tampered blocks and non-tampered blocks. Further, the tampered blocks can also be classified into two types. (1) Reserved feature blocks: The tampered blocks, whose mapping blocks are not tampered. (2) Ruined feature blocks: The tampered blocks, whose mapping blocks are also tampered.
+
+At first, reserved feature blocks are recovered with the help the mapping. The recov- ery information from the mapped block is extracted (6 MSB) using $K_4$ and padded with “00” to make it 8 bit. This 8 bit (after decimal conversion) is used to replace pixel values of reserved feature block. Then after, Ruined feature blocks are recov- ered through the adaptive neighborhood block averaging (ANBA) process. Figure \ref{fig:recovery} represents the ANBA process for the recovery for the tampered block 'T'.
+
+Here, average intensity "$\mu$" is calculated for each valid (non-tampered or recovered) neighbor block. Next, the average (X) of all valid "$\mu$" values is obtained as shown in Fig. 4. At last, X is substituted on all pixel positions of tampered block “T”. In the same way, repeat the process for every tampered block. Afterward, the ANBA process is applied one more time to improve recovery. Finally, the recovered image is obtained.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{recovery.png}
+    \caption{Fragile watermark preparation in order to preserve the recovery data along with the authentication data}
+    \label{fig:recovery}
+\end{figure}
+
 \end{document}
