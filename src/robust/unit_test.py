@@ -10,7 +10,7 @@ def test_robust():
     K1, K2 = 5, 42
     np.random.seed(K1)
     Wrobust = np.random.randint(0, 2, size=(32, 32), dtype=np.uint8)
-    host_im = Image.open('src/253.tif')   
+    host_im = Image.open('src/253.tif')
     host_image = np.array(host_im)
     alpha = 0.1
 

@@ -3,6 +3,7 @@ from preparation import prep
 from embedding import embed_watermark
 from extraction import extr
 from utils import block_height, block_width
+from evaluation import evaluate_performance
 
 from visualization import randomly_tamper_image, color_tampered_blocks, plot_detection_result
 
@@ -107,12 +108,73 @@ def test_recovery():
 
     plot_detection_result(tampered_image, recovered_image, "recovery")
 
+def test_evaluation():
+    """
+    Test the evaluation of the watermarking and tampering detection system.
+
+    This function evaluates the system's performance using the metrics:
+    - PSNR and SSIM for watermarked and recovered images
+    - Bit Error Rate (BER)
+    - Tamper Detection Accuracy (TDeff)
+    - Self-Recovery Quality
+    """
+    # Parameters
+    k3, k4 = 12345, 54321
+    host_im = Image.open('253.tif')
+    original_image = np.array(host_im)
+
+    # Step 1: Prepare and Embed Watermark
+    watermark = prep(original_image, k3, k4)
+    watermarked_image = embed_watermark(original_image, watermark)
+
+    # Step 2: Simulate Tampering
+    tampered_image = watermarked_image.copy()
+    for _ in range(3):  # Simulate multiple tampering steps
+        tampered_image = randomly_tamper_image(tampered_image)
+
+    # Step 3: Detect Tampered Blocks and Extract Recovery Data
+    tampered_blocks, EW_recovs_sorted = extr(tampered_image, k3, k4)
+
+    # Simulate the true tampered blocks for testing (assumes a mechanism exists to identify them)
+    # true_tampered_blocks = valid_blocks
+
+    # Step 4: Recover the Image
+    valid_blocks = set(
+        idx
+        for idx in zip(range(tampered_image.shape[0] // block_height), range(tampered_image.shape[1] // block_width))
+        if idx not in tampered_blocks
+    )
+    recovered_image = tampered_image.copy()
+    recover_image(recovered_image, tampered_blocks, valid_blocks, EW_recovs_sorted)
+
+    true_tampered_blocks = valid_blocks
+
+    # Step 5: Extract Watermark from Recovered Image
+    extracted_watermark, _ = extr(recovered_image, k3, k4)
+
+    # Step 6: Evaluate Performance
+    metrics = evaluate_performance(
+        original_image=original_image,
+        watermarked_image=watermarked_image,
+        tampered_image=tampered_image,
+        recovered_image=recovered_image,
+        watermark=watermark,
+        extracted_watermark=extracted_watermark,
+        tampered_blocks=tampered_blocks,
+        true_tampered_blocks=valid_blocks,
+    )
+
+    # Step 7: Display Results
+    print(metrics)
+
+
 def run_tests():
     # test_prep()
     # test_embd()
     test_extr()
     #test_visualization()
     test_recovery()
+    test_evaluation()
     print("All tests passed.")
 
 # Running tests
