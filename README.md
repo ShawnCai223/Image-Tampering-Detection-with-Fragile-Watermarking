@@ -1,8 +1,12 @@
 # Image Tampering Detection with Fragile Watermarking
 
 ## Documents
-- [Proposal]()
+- [Proposal](https://github.com/ShawnCai223/Image-Tampering-Detection-with-Fragile-Watermarking/blob/main/ref/Proposal.pdf)
+- [Update Presentation Slides]()
 - [Final Presentation Slides]()
+- [Report]()
+
+
 
 ## Tasks
 1. neighbor
@@ -16,8 +20,8 @@
 11.21/26 Update presentation    
 12.13 Final presentation  
 
-## References
-[Paper](ref/multipurpose.pdf)
+## Reference
+[Paper](https://github.com/ShawnCai223/Image-Tampering-Detection-with-Fragile-Watermarking/blob/main/ref/multipurpose.pdf)
 
 
   
