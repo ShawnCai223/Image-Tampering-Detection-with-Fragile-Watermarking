@@ -13,20 +13,30 @@
 
 ## Result
 <div align="center">
-  <img src="https://github.com/ShawnCai223/Image-Tampering-Detection-with-Fragile-Watermarking/blob/main/images/Outcome1.png" alt="Result - Watermark Embedding and Tampering Detection" width="300"/>
+  <img src="https://github.com/ShawnCai223/Image-Tampering-Detection-with-Fragile-Watermarking/blob/main/images/Outcome1.png" alt="Result - Watermark Embedding and Tampering Detection"/>
 </div>
+
+<div align="center">
 Result - Watermark Embedding and Tampering Detection
+</div>
+<br>
 
 <div align="center">
   <img src="https://github.com/ShawnCai223/Image-Tampering-Detection-with-Fragile-Watermarking/blob/main/images/Outcome2.png" alt="Result - Image Recovering" width="300"/>
 </div>
+
+<div align="center">
 Result - Image Recovering
+</div>
+<br>
 
 | Image  | PSNR<sub>watermark</sub>   | SSIM<sub>watermark</sub>  | BER     | TD<sub>eff</SUB>   | PSNR<sub>recovery</sub>   |  SSIM<sub>recovery</sub> |
 |:------:|:--------------------------:|:-------------------------:|:-------:|:------------------:|:-------------------------:|:------------------------:|
 |  avg   |           41.79            |          0.9912           | 0.1583  |       93.18        |           36.23           |          0.9810          |
 
-
+<div align="center">
+Evaluation Metrics
+</div>
 
 
 
