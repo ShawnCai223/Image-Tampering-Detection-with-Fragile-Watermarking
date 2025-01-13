@@ -1,5 +1,4 @@
-# ucsd-ece253-project
-Image Tampering Detection with Fragile Watermarking
+# Image Tampering Detection with Fragile Watermarking
 
 ## References
 1. [Implementation](https://docs.google.com/document/d/1DClROk7xw8BIdSInuzEYjxQx1bXZTSlQuAWlZqT_kEA/edit?usp=sharing)
