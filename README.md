@@ -33,12 +33,7 @@ Result - Image Recovering
 </div>
 <br>
 
-<div align="center">
+### Evaluation Metrics
 | Image  | PSNR<sub>watermark</sub>   | SSIM<sub>watermark</sub>  | BER     | TD<sub>eff</SUB>   | PSNR<sub>recovery</sub>   |  SSIM<sub>recovery</sub> |
 |:------:|:--------------------------:|:-------------------------:|:-------:|:------------------:|:-------------------------:|:------------------------:|
 |  avg   |           41.79            |          0.9912           | 0.1583  |       93.18        |           36.23           |          0.9810          |
-</div>
-
-<div align="center">
-Evaluation Metrics
-</div>
